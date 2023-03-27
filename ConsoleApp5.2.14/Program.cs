@@ -4,13 +4,23 @@
     {
         static void Main(string[] args)
         {
-            var array = GetArrayFromConsole();
+            int len = 3;
+            var array = GetArrayFromConsole(ref len);
             var sortedarray = SortArray(array);
+
+            for (int i = 0; i < sortedarray.Length; i++)
+            {
+                Console.WriteLine(sortedarray[i]);
+            }
+            
+            Console.ReadKey();
+
         }
 
-        static int[] GetArrayFromConsole()
+        static int[] GetArrayFromConsole(ref int len)
         {
-            var result = new int[5];
+            len = 6;
+            var result = new int [len];
 
             for (int i = 0; i < result.Length; i++)
             {
@@ -21,9 +31,8 @@
             return result;
         }
 
-        static int[] SortArray(int[] resuit)
+        static int[] SortArray(int[] result)
         {
-            var result = new int[5];
 
             int temp = 0;
 
